@@ -32,8 +32,8 @@ public class Solution {
     int sum = 0;
     for(int i = 0 ; i<N;i++){
         for (int j = 0; j < M; j++) {
-        if(C[P][i]<C[j][i])
-            sum = C[j][i]-C[P][i];
+        if(C[P-1][i]<C[j][i])
+            sum = C[j][i]-C[P-1][i];
     }
         
     }
