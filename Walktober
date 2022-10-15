@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Solution {
+  // Object for Input
+  static Scanner inputObject = new Scanner(System.in);
+
+  public static void main(String args[]) {
+    // Declare integer 'T' (Number of Test Cases)
+    int T;
+    // & read it from Standard Input
+    T = inputObject.nextInt();
+    // Loop through the number of Test Cases [1, T]
+    for (int test_case = 1; test_case <= T; test_case++) {
+      // Print the Test Case Number to Standard Output
+      System.out.print("Case #" + test_case + ": ");
+      solve();
+    }
+    inputObject.close();
+  }
+  static int solve() {
+    int M, N,P;
+    M = inputObject.nextInt();
+    N = inputObject.nextInt();
+    P = inputObject.nextInt();
+    // Declare an array 'C' (Candies) of size 'N'
+    int[][] C = new int[M][N];
+      for (int i = 0; i < M; i++) {
+          for (int j = 0; j < N; j++) {
+      C[i][j] = inputObject.nextInt();
+          }
+    }
+    int sum = 0;
+    for(int i = 0 ; i<N;i++){
+        for (int j = 0; j < M; j++) {
+        if(C[P][i]<C[j][i])
+            sum = C[j][i]-C[P][i];
+    }
+        
+    }
+    return sum;
+  }
+}
